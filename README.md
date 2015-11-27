@@ -10,7 +10,7 @@ clustering map markers, requires React 0.14.
 
 # Usage
 
-```
+```javascript
 import React from 'react';
 import HotelsOnMap from 'hotels-on-map';
 
