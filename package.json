@@ -1,0 +1,41 @@
+{
+  "name": "react-hotels-on-map",
+  "version": "0.0.0",
+  "description": "Presents a set of hotels as clustered markers on Google Map, each with an info window displaying the hotel name",
+  "main": "build/index.js",
+  "scripts": {
+    "clean": "rm ./build/*.js",
+    "build": "babel src -d build",
+    "watch": "babel src -w -d build",
+    "prepublish": "npm run build",
+    "test": "mocha -b --compilers js:babel-core/register -r tests/helpers/jsdom-bootstrap -t 4000 ./tests/*.spec.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ikr/react-hotels-on-map.git"
+  },
+  "keywords": [
+    "gui",
+    "react-component",
+    "browser",
+    "html",
+    "hotels",
+    "map",
+    "geolocation",
+    "browserify",
+    "clustered",
+    "markers"
+  ],
+  "author": "Ivan Krechetov <ikr@ikr.su>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ikr/react-hotels-on-map/issues"
+  },
+  "homepage": "https://github.com/ikr/react-hotels-on-map#readme",
+  "devDependencies": {
+    "babel-cli": "^6.2.0",
+    "babel-core": "^6.2.1",
+    "jsdom": "^7.1.0",
+    "mocha": "^2.3.4"
+  }
+}
