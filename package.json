@@ -10,7 +10,8 @@
     "prepublish": "npm run build",
     "lint": "eslint ./src ./tests",
     "pretest": "npm run lint",
-    "test": "mocha -b --compilers js:babel-core/register -r tests/helpers/jsdom-bootstrap -t 4000 ./tests/*.spec.js"
+    "test": "mocha --compilers js:babel-core/register -r tests/helpers/jsdom-bootstrap -t 4000 ./tests/*.spec.js",
+    "tdd": "mocha -w -R min --compilers js:babel-core/register -r tests/helpers/jsdom-bootstrap -t 4000 ./tests/*.spec.js"
   },
   "repository": {
     "type": "git",
