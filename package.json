@@ -8,6 +8,8 @@
     "build": "babel src -d build",
     "watch": "babel src -w -d build",
     "prepublish": "npm run build",
+    "lint": "eslint ./src ./tests",
+    "pretest": "npm run lint",
     "test": "mocha -b --compilers js:babel-core/register -r tests/helpers/jsdom-bootstrap -t 4000 ./tests/*.spec.js"
   },
   "repository": {
@@ -35,6 +37,8 @@
   "devDependencies": {
     "babel-cli": "^6.2.0",
     "babel-core": "^6.2.1",
+    "eslint": "^1.10.1",
+    "eslint-plugin-react": "^3.10.0",
     "jsdom": "^7.1.0",
     "mocha": "^2.3.4"
   }
