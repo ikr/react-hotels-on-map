@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/ikr/react-hotels-on-map.svg)](https://travis-ci.org/ikr/react-hotels-on-map)
+
 # Summary
 
 Presents a set of hotels as clustered markers on Google Map, each with an info window displaying the
