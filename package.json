@@ -44,5 +44,8 @@
     "eslint-plugin-react": "^3.10.0",
     "jsdom": "^7.1.0",
     "mocha": "^2.3.4"
+  },
+  "dependencies": {
+    "react": "^0.13.3"
   }
 }

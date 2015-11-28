@@ -1,8 +1,11 @@
 import assert from 'assert';
-import api from '../src/index';
+import React from 'react/addons';
+import HotelsOnMap from '../src/index';
 
-describe('public API', () => {
-    it('is a function', () => {
-        assert.strictEqual(typeof api, 'function');
+const tu = React.addons.TestUtils;
+
+describe('HotelsOnMap -- the public API', () => {
+    it('is a React component that can be instantiated as an element', () => {
+        assert(tu.isElement(<HotelsOnMap/>));
     });
 });
