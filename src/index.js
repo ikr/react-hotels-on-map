@@ -11,7 +11,7 @@ export default React.createClass({
 
         new maps.Map(this.getDOMNode(), {
             zoom: 7,
-            center: {lat: 46.8348, lng: 8.21745}
+            center: new maps.LatLng(46.8348, 8.21745)
         });
     }
 });
