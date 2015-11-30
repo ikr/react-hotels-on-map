@@ -54,8 +54,5 @@
   },
   "peerDependencies": {
     "react": "^0.13.3"
-  },
-  "dependencies": {
-    "js-marker-clusterer": "^1.0.0"
   }
 }
