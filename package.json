@@ -12,7 +12,8 @@
     "pretest": "npm run lint",
     "test": "mocha --compilers js:babel-core/register -r tests/helpers/jsdom-bootstrap -t 4000 ./tests/*.spec.js",
     "tdd": "mocha -w -R min --compilers js:babel-core/register -r tests/helpers/jsdom-bootstrap -t 4000 ./tests/*.spec.js",
-    "demo": "browserify src/demo.js -t babelify | uglifyjs > www/demo/bundle.js"
+    "demo": "browserify src/demo.js -t babelify | uglifyjs > www/demo/bundle.js",
+    "demo-watch": "watchify src/demo.js -t babelify -d -o www/demo/bundle.js -v"
   },
   "repository": {
     "type": "git",
@@ -48,7 +49,8 @@
     "jsdom": "^7.1.0",
     "mocha": "^2.3.4",
     "react": "^0.13.3",
-    "uglify-js": "^2.6.1"
+    "uglify-js": "^2.6.1",
+    "watchify": "^3.6.1"
   },
   "peerDependencies": {
     "react": "^0.13.3"
