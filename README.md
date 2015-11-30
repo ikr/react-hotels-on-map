@@ -29,3 +29,8 @@ React.render(
     global.document.body
 );
 ```
+
+# Demo
+
+See that [simple example code](https://github.com/ikr/react-hotels-on-map/blob/master/src/demo.js)
+running [live here.](ikr.su/h/react-hotels-on-map/demo/)
