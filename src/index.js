@@ -6,6 +6,8 @@ import marker from './marker';
 /* global global */
 
 export default React.createClass({
+    propTypes: {hotels: React.PropTypes.array.isRequired},
+
     render() {
         return <div className='hotels-on-map'></div>;
     },

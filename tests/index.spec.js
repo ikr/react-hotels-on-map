@@ -10,7 +10,11 @@ before(mapify);
 
 describe('HotelsOnMap -- the public API', () => {
     it('is a React component that can be instantiated as an element', () => {
-        assert(tu.isElement(<HotelsOnMap/>));
+        assert(tu.isElement(<HotelsOnMap hotels={[]}/>));
+    });
+
+    it('requires the `hotels` array property', () => {
+        assert.strictEqual(HotelsOnMap.propTypes.hotels, React.PropTypes.array.isRequired);
     });
 
     describe('HTML', () => {
