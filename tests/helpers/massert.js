@@ -15,5 +15,9 @@ export default {
 
     contains(haystack, needle) {
         assert(haystack.indexOf(needle) >= 0, `"${needle}" not found in "${haystack}"`);
+    },
+
+    floatEqual(x, y) {
+        assert(Math.abs(x - y) < 0.0000001, `${x} !≈ ${y}`);
     }
 };
