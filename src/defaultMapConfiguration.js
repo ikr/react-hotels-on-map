@@ -5,5 +5,6 @@ export default () => ({
     maxZoom: 19,
     center: {lat: 46.8348, lng: 8.21745},
     scrollwheel: false,
-    mapTypeId: global.window.google.maps.MapTypeId.ROADMAP
+    mapTypeId: global.window.google.maps.MapTypeId.ROADMAP,
+    styles: [{featureType: 'poi.business', stylers: [{visibility: 'off'}]}]
 });
