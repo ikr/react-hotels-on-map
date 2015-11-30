@@ -5,6 +5,8 @@ import marker from './marker';
 
 /* global global */
 
+const UNIT_TESTING = (typeof global.describe === 'function');
+
 export default React.createClass({
     propTypes: {hotels: React.PropTypes.array.isRequired},
 
@@ -13,6 +15,10 @@ export default React.createClass({
     },
 
     componentDidMount() {
+        if (UNIT_TESTING) {
+            return;
+        }
+
         const maps = global.window.google.maps;
 
         this.map = new maps.Map(this.getDOMNode(), defaultMapConfiguration());
