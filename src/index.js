@@ -1,4 +1,5 @@
 import React from 'react';
+import defaultMapConfiguration from './defaultMapConfiguration';
 
 export default React.createClass({
     render() {
@@ -9,9 +10,6 @@ export default React.createClass({
         /* global global */
         const maps = global.window.google.maps;
 
-        new maps.Map(this.getDOMNode(), {
-            zoom: 7,
-            center: new maps.LatLng(46.8348, 8.21745)
-        });
+        new maps.Map(this.getDOMNode(), defaultMapConfiguration());
     }
 });
