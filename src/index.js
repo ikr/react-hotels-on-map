@@ -13,8 +13,10 @@ export default React.createClass({
     componentDidMount() {
         const maps = global.window.google.maps;
         const map = new maps.Map(this.getDOMNode(), defaultMapConfiguration());
+        const markers = this.markers();
+        const clusterer = new MarkerClusterer(map, markers, {gridSize: 30});
 
-        new MarkerClusterer(map, this.markers());
+        clusterer.fitMapToMarkers(map, markers);
     },
 
     markers() {
