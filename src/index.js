@@ -12,14 +12,26 @@ export default React.createClass({
 
     componentDidMount() {
         const maps = global.window.google.maps;
-        const map = new maps.Map(this.getDOMNode(), defaultMapConfiguration());
-        const markers = this.markers();
-        const clusterer = new MarkerClusterer(map, markers, {gridSize: 30});
 
-        clusterer.fitMapToMarkers(map, markers);
+        this.map = new maps.Map(this.getDOMNode(), defaultMapConfiguration());
+
+        const markers = this.markers();
+        const clusterer = new MarkerClusterer(this.map, markers, {gridSize: 30});
+
+        clusterer.fitMapToMarkers(this.map, markers);
     },
 
     markers() {
-        return this.props.hotels.map(({geolocation}) => marker(geolocation));
+        return this.props.hotels.map(hotel => {
+            const maps = global.window.google.maps;
+            const result = marker(hotel.geolocation);
+            const infoWindow = new maps.InfoWindow({content: hotel.name});
+
+            result.addListener('click', () => {
+                infoWindow.open(this.map, result);
+            });
+
+            return result;
+        });
     }
 });
