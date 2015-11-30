@@ -17,7 +17,7 @@ describe('HotelsOnMap -- the public API', () => {
         let element;
 
         beforeEach(() => {
-            element = tu.renderIntoDocument(<HotelsOnMap/>).getDOMNode();
+            element = tu.renderIntoDocument(<HotelsOnMap hotels={[]}/>).getDOMNode();
         });
 
         it('declares the top level CSS class', () => {

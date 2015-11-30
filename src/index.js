@@ -3,6 +3,8 @@ import MarkerClusterer from './MarkerClusterer';
 import defaultMapConfiguration from './defaultMapConfiguration';
 import marker from './marker';
 
+/* global global */
+
 export default React.createClass({
     render() {
         return <div className='hotels-on-map'></div>;
