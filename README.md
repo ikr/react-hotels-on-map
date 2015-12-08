@@ -40,5 +40,6 @@ React.render(
 
 # Demo
 
-See that [simple example code](https://github.com/ikr/react-hotels-on-map/blob/master/src/demo.js)
+See the [short example code](https://github.com/ikr/react-hotels-on-map/blob/master/src/demo.js)
+with that [sample data](https://github.com/ikr/react-hotels-on-map/blob/master/src/demoData.js)
 running [live here.](https://ikr.su/h/react-hotels-on-map/demo/)
