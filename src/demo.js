@@ -188,4 +188,4 @@ const hotels = [{
     geolocation: {latitude: 47.44872, longitude: 8.584882}
 }];
 
-React.render(<HotelsOnMap hotels={hotels}/>, global.document.body);
+React.render(<HotelsOnMap hotels={hotels}/>, global.document.getElementById('root'));
