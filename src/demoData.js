@@ -1,5 +1,5 @@
 export default [{ratingStars: 4,
-    name: '^MGallery Hotel Continental Zürich',
+    name: 'Gallery Hotel Continental Zürich',
     streetAddress: 'Stampfenbachstrasse 60',
     postalCode: '8006',
     cityLocalized: 'Zürich',
