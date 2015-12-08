@@ -1,7 +1,7 @@
 {
   "name": "react-hotels-on-map",
   "version": "0.1.1",
-  "description": "Presents a set of hotels as clustered markers on Google Map, each with an info window displaying the hotel name",
+  "description": "Presents a set of hotels as clustered markers on Google Map, each with an info window displaying the hotel summary",
   "main": "build/index.js",
   "scripts": {
     "clean": "rm ./build/*.js",
