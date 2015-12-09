@@ -171,6 +171,8 @@ rules:
     -
       builtinGlobals: true
       hoist: all
+      allow:
+        - name
   no-sparse-arrays: 2
   no-sync: 2
   no-this-before-super: 2
