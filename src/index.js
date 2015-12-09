@@ -2,6 +2,7 @@ import React from 'react';
 import MarkerClusterer from './MarkerClusterer';
 import defaultMapConfiguration from './defaultMapConfiguration';
 import marker from './marker';
+import hotelInfoHtml from './hotelInfoHtml';
 
 /* global global */
 
@@ -33,7 +34,7 @@ export default React.createClass({
         return this.props.hotels.map(hotel => {
             const maps = global.window.google.maps;
             const result = marker(hotel.geolocation);
-            const infoWindow = new maps.InfoWindow({content: hotel.name});
+            const infoWindow = new maps.InfoWindow({content: hotelInfoHtml(hotel)});
 
             result.addListener('click', () => {
                 infoWindow.open(this.map, result);

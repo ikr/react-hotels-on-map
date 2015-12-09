@@ -12,14 +12,22 @@ function selfClosedTag(tagName) {
     return `<${tagName}/>`;
 }
 
+function nonEmptyItems(xs) {
+    return xs.filter(x => x.length > 0);
+}
+
+function addressLine(streetAddress, postalCode, cityLocalized) {
+    return nonEmptyItems([streetAddress, [postalCode, cityLocalized].join(' ')]).join(', ');
+}
+
 export default ({
     ratingStars,
     name,
     streetAddress,
     postalCode,
     cityLocalized
-}) => [
+}) => nonEmptyItems([
     starText(ratingStars),
     name,
-    `${streetAddress}, ${postalCode} ${cityLocalized}`
-].filter(part => part.length > 0).join(selfClosedTag('br'));
+    addressLine(streetAddress, postalCode, cityLocalized)
+]).join(selfClosedTag('br'));

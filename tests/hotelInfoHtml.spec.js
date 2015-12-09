@@ -42,4 +42,12 @@ describe('hotelInfoHtml', () => {
             assert.strictEqual(result.indexOf('<br/>'), result.lastIndexOf('<br/>'));
         });
     });
+
+    describe('result for no-street hotel', () => {
+        const result = hotelInfoHtml(Object.assign({}, hotel(), {streetAddress: ''}));
+
+        it('contains no comma', () => {
+            assert.strictEqual(result.indexOf(','), -1);
+        });
+    });
 });
