@@ -29,7 +29,10 @@ export default React.createClass({
         const maps = global.window.google.maps;
 
         this.map = new maps.Map(this.getDOMNode(), defaultMapConfiguration());
+        this.applyClustering();
+    },
 
+    applyClustering() {
         const markers = this.markers();
         const clusterer = new MarkerClusterer(this.map, markers, {gridSize: 30});
 
