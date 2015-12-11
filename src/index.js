@@ -33,7 +33,13 @@ export default React.createClass({
     },
 
     applyClustering() {
+        const maps = global.window.google.maps;
         const markers = this.markers();
+
+        if (markers.length === 1) {
+            maps.event.trigger(markers[0], 'click');
+        }
+
         const clusterer = new MarkerClusterer(this.map, markers, {gridSize: 30});
 
         clusterer.fitMapToMarkers(this.map, markers);
