@@ -8,6 +8,12 @@ import hotelInfoHtml from './hotelInfoHtml';
 
 const UNIT_TESTING = (typeof global.describe === 'function');
 
+function newInfoWindow(hotel) {
+    const maps = global.window.google.maps;
+
+    return new maps.InfoWindow({content: hotelInfoHtml(hotel)});
+}
+
 export default React.createClass({
     propTypes: {hotels: React.PropTypes.array.isRequired},
 
@@ -32,12 +38,10 @@ export default React.createClass({
 
     markers() {
         return this.props.hotels.map(hotel => {
-            const maps = global.window.google.maps;
             const result = marker(hotel.geolocation);
-            const infoWindow = new maps.InfoWindow({content: hotelInfoHtml(hotel)});
 
             result.addListener('click', () => {
-                infoWindow.open(this.map, result);
+                newInfoWindow(hotel).open(this.map, result);
             });
 
             return result;
