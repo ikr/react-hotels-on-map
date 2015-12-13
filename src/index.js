@@ -30,7 +30,9 @@ export default React.createClass({
     },
 
     resetMap() {
-        this.getDOMNode().removeChild(this.getDOMNode().querySelector('.gm-style'));
+        const element = this.getDOMNode();
+
+        element.removeChild(element.querySelector('.gm-style'));
         this.map = null;
         this.initMap();
     },
@@ -39,20 +41,19 @@ export default React.createClass({
         const maps = global.window.google.maps;
 
         this.map = new maps.Map(this.getDOMNode(), defaultMapConfiguration());
-        this.applyClustering();
+        this.displayMarkers();
     },
 
-    applyClustering() {
-        const maps = global.window.google.maps;
+    displayMarkers() {
         const markers = this.markers();
 
         if (markers.length === 1) {
-            maps.event.trigger(markers[0], 'click');
+            this.applyOneHotelConfiguration(markers);
+        } else {
+            const clusterer = new MarkerClusterer(this.map, markers, {gridSize: 30});
+
+            clusterer.fitMapToMarkers(this.map, markers);
         }
-
-        const clusterer = new MarkerClusterer(this.map, markers, {gridSize: 30});
-
-        clusterer.fitMapToMarkers(this.map, markers);
     },
 
     markers() {
@@ -65,5 +66,16 @@ export default React.createClass({
 
             return result;
         });
+    },
+
+    applyOneHotelConfiguration(markers) {
+        const maps = global.window.google.maps;
+        const {geolocation: {latitude, longitude}} = this.props.hotels[0];
+
+        this.map.setCenter({lat: latitude, lng: longitude});
+        this.map.setZoom(13);
+
+        markers[0].setMap(this.map);
+        maps.event.trigger(markers[0], 'click');
     }
 });
