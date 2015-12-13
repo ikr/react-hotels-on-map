@@ -34,9 +34,18 @@ const props = {hotels: [{
 
 React.render(
     <HotelsOnMap {...props}/>,
-    global.document.body
+    global.document.getElementById('root')
 );
 ```
+
+The code above will display and cluster all the hotel markers on the map, making sure that all the
+clustered markers are visible. On a marker click, an info-window with the short hotel information
+will be displayed.
+
+## One hotel case
+
+When the length of the `hotels` array is `1`, an info window for the single hotel is displayed
+immediately, saving the user a marker click.
 
 # Demo
 
