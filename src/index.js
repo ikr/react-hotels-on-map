@@ -26,6 +26,16 @@ export default React.createClass({
             return;
         }
 
+        this.initMap();
+    },
+
+    resetMap() {
+        this.getDOMNode().removeChild(this.getDOMNode().querySelector('.gm-style'));
+        this.map = null;
+        this.initMap();
+    },
+
+    initMap() {
         const maps = global.window.google.maps;
 
         this.map = new maps.Map(this.getDOMNode(), defaultMapConfiguration());
