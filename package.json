@@ -1,6 +1,6 @@
 {
   "name": "react-hotels-on-map",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Presents a set of hotels as clustered markers on Google Map, each with an info window displaying the hotel summary",
   "main": "build/index.js",
   "scripts": {
@@ -48,11 +48,13 @@
     "eslint-plugin-react": "^3.10.0",
     "jsdom": "^7.1.0",
     "mocha": "^2.3.4",
-    "react": "^0.13.3",
+    "react": "^0.14.3",
+    "react-dom": "^0.14.3",
     "uglify-js": "^2.6.1",
     "watchify": "^3.6.1"
   },
   "peerDependencies": {
-    "react": "^0.13.3"
+    "react": "^0.14.3",
+    "react-dom": "^0.14.3"
   }
 }
