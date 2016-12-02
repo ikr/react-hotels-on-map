@@ -42,6 +42,16 @@ The code above will display and cluster all the hotel markers on the map, making
 clustered markers are visible. On a marker click, an info-window with the short hotel information
 will be displayed.
 
+You're encouraged to also set the `markerClusterImageUrlPrefix` prop value, and host the cluster
+images on your own Web property. The default value is
+`https://www.swisshotels.com/client-side-public/img/markerclustererplus/m`, giving you those:
+
+![](https://www.swisshotels.com/client-side-public/img/markerclustererplus/m1.png)
+![](https://www.swisshotels.com/client-side-public/img/markerclustererplus/m2.png)
+![](https://www.swisshotels.com/client-side-public/img/markerclustererplus/m3.png)
+![](https://www.swisshotels.com/client-side-public/img/markerclustererplus/m4.png)
+![](https://www.swisshotels.com/client-side-public/img/markerclustererplus/m5.png)
+
 ## One hotel case
 
 When the length of the `hotels` array is `1`, an info window for the single hotel is displayed
