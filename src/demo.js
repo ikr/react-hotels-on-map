@@ -17,7 +17,7 @@ class StatefulContainer extends React.Component {
                 </select>
             </p>
 
-            <HotelsOnMap ref='hotelsOnMap' hotels={this.hotels()}/>
+            <HotelsOnMap ref='hotelsOnMap' hotels={this.hotels()} />
         </div>;
     }
 

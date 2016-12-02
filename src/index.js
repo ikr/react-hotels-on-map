@@ -15,7 +15,8 @@ function newInfoWindow(hotel) {
 }
 
 export default React.createClass({
-    propTypes: {hotels: React.PropTypes.array.isRequired},
+    propTypes: {hotels: React.PropTypes.array.isRequired,
+                markerClusterImageUrlPrefix: React.PropTypes.string},
 
     render() {
         return <div className='hotels-on-map'></div>;
@@ -46,11 +47,16 @@ export default React.createClass({
 
     displayMarkers() {
         const markers = this.markers();
+        const options = {gridSize: 30};
 
         if (markers.length === 1) {
             this.applyOneHotelConfiguration(markers);
         } else {
-            const clusterer = new MarkerClusterer(this.map, markers, {gridSize: 30});
+            if (this.props.markerClusterImageUrlPrefix) {
+                options.imagePath = this.props.markerClusterImageUrlPrefix;
+            }
+
+            const clusterer = new MarkerClusterer(this.map, markers, options);
 
             clusterer.fitMapToMarkers(this.map, markers);
         }
