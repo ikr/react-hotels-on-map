@@ -15,8 +15,10 @@ function newInfoWindow(hotel) {
 }
 
 export default React.createClass({
-    propTypes: {hotels: React.PropTypes.array.isRequired,
-                markerClusterImageUrlPrefix: React.PropTypes.string},
+    propTypes: {
+        hotels: React.PropTypes.array.isRequired,
+        markerClusterImageUrlPrefix: React.PropTypes.string
+    },
 
     render() {
         return <div className='hotels-on-map'></div>;

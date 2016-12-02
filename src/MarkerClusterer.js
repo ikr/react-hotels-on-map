@@ -190,7 +190,6 @@ function MarkerClusterer(map, opt_markers, opt_options) {
 MarkerClusterer.prototype.MARKER_CLUSTER_IMAGE_PATH_ =
     'https://www.swisshotels.com/client-side-public/img/markerclustererplus/m';
 
-
 /**
  * The marker cluster image path.
  *
