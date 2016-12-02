@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import HotelsOnMap from './index';
 import demoData from './demoData';
 
@@ -34,4 +35,4 @@ class StatefulContainer extends React.Component {
 
 /* global global */
 
-React.render(<StatefulContainer/>, global.document.getElementById('root'));
+ReactDOM.render(<StatefulContainer/>, global.document.getElementById('root'));

@@ -19,7 +19,7 @@ export default React.createClass({
                 markerClusterImageUrlPrefix: React.PropTypes.string},
 
     render() {
-        return <div className='hotels-on-map'></div>;
+        return <div ref='hotelsOnMap' className='hotels-on-map'></div>;
     },
 
     componentDidMount() {
@@ -31,7 +31,7 @@ export default React.createClass({
     },
 
     resetMap() {
-        const element = this.getDOMNode();
+        const element = this.refs.hotelsOnMap;
 
         element.removeChild(element.querySelector('.gm-style'));
         this.map = null;
@@ -41,7 +41,7 @@ export default React.createClass({
     initMap() {
         const maps = global.window.google.maps;
 
-        this.map = new maps.Map(this.getDOMNode(), defaultMapConfiguration());
+        this.map = new maps.Map(this.refs.hotelsOnMap, defaultMapConfiguration());
         this.displayMarkers();
     },
 
