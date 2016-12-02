@@ -12,7 +12,7 @@
     "pretest": "npm run lint",
     "test": "mocha --compilers js:babel-core/register -r tests/helpers/jsdom-bootstrap -t 4000 ./tests/*.spec.js",
     "tdd": "mocha -w -R min --compilers js:babel-core/register -r tests/helpers/jsdom-bootstrap -t 4000 ./tests/*.spec.js",
-    "demo": "browserify src/demo.js -t babelify | uglifyjs > www/demo/bundle.js",
+    "demo": "browserify src/demo.js -t babelify | uglifyjs -m > www/demo/bundle.js",
     "demo-watch": "watchify src/demo.js -t babelify -d -o www/demo/bundle.js -v"
   },
   "repository": {
