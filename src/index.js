@@ -35,7 +35,7 @@ export default React.createClass({
     resetMap() {
         const element = this.getDOMNode();
 
-        element.removeChild(element.querySelector('.gm-style'));
+        element.removeChild(element.querySelector('div'));
         this.map = null;
         this.initMap();
     },
